@@ -17,6 +17,11 @@ pool = [
     '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '&', '*'
 ]
 
+patt2 = re.compile(r"[0-9]{5,}")
+patt3 = re.compile(r"[a-z]{3,}")
+patt4 = re.compile(r"[A-Z]{3,}")
+special_chars = ['!', '@', '#', '$', '%', '&', '*']
+
 def create_password(password_chars_list: list) -> list:
     count = 60
     while count > 0:
@@ -30,11 +35,6 @@ def check_special_chars(special_chars: list, password_string: str) -> bool:
         if i not in password_string:
             pass_check = False
     return pass_check
-
-patt2 = re.compile(r"[0-9]{5,}")
-patt3 = re.compile(r"[a-z]{3,}")
-patt4 = re.compile(r"[A-Z]{3,}")
-special_chars = ['!', '@', '#', '$', '%', '&', '*']
 
 while True:
     password_chars_list = []
